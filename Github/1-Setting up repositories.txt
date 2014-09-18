@@ -1,0 +1,40 @@
+
+(copied from old notes, 18-9-14)
+
+---------QUICK SETUP GUIDE:
+**	1) downloads:
+I had a 64 bit eclipse (prob not too relevant yet) so I D/L'd 64 bit tortoiseSVN
+
+install that whatever way (I think i should have installed extra icons to look nicer). and then it should be ready to go/ always running, at least in windows explorer.
+**	2) To "export" files/ download from a repository:
+rightclick "tortoiseSVN -> export"
+**	3) to link to a repository (for easy sync/ commit):
+rightclick "SVN checkout"
+From here, new options will appear:
+(a) "SVN Update" to download the latest committed version from repository. (NB always do this first incase you overwrite later versions!)
+(b) "SVN commit" to save all your latest changes as the most up-to-date revision of the code base.
+
+**	4) Creating a repository:
+can create an online one quite easily via github. 
+-go to homepage, click repositories tab, & click "new". choose a name, & description if needed. MUST be public with github free.
+-(initialising a readme is kinda pointless since its a weird file (readme.md).)
+-then to link to this repository, use the http address. (e.g. https://github.com/user_name/repository_name)
+
+**  -OR for a local repository, go to desired local [EMPTY] folder, and click "TortoiseSVN -> create repository here"
+note that this folder must be currently EMPTY, and not write-protected!
+
+------------------------------------------------
+
+
+to set up this folder, heres my steps:
+-create "notes" repository. (include readme.md, cos i think it complained when i didnt last time)
+-note that (i think) this repository will then automatically include subfolders for "trunk" and "branches"
+-go to desired base folder on local drive
+-rightclick and select "svn checkout" to pull down files from server into this folder (-> will pull down readme)
+-careful to delete any automatic folders it tries to create, e.g. (repository_name) folder locally, 
+- and also to be safe in the repository url i added a "trunk" subfolder to ensure my notes appeared on github webpage easily.
+
+-Then, to add my notes, i just rightclicked "add", deselected-then-reselected folder and any notes i wanted to commit.
+	(or i could have just done whole folder, but i didnt wanna upload everything)
+- and then rightclicked "commit"
+

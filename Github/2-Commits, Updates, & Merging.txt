@@ -1,0 +1,17 @@
+
+(copied from old notes, 18-9-14)
+
+"SVN Checkout" = essentially get/download latest working copy of project, to work on it. select a repository, and it will be copied to your selected/ current directory.
+
+**"import" = actually uploads a file TO the repository!!! 
+	(I kinda assumed it would download FROM....)
+
+"export" = counterintuitive, but grabs all files FROM a repository for use.
+	-> NB usually does to a subfolder, but if necessary, it will write to wherever AND WILL OVERWRITE any duplicate files!!
+
+
+---------------------------------
+
+
+
+
