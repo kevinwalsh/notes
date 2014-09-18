@@ -1,0 +1,78 @@
+BASICS
+
+IDE Layout:
+-----------------------------------
+toolbar:
+-"verify" = check code for syntax errors (but wont flag logical errors!)
+-"upload" = send code to the arduino
+-"serial monitor" (looks like search button) = allows to send & rX info from board.... commonly used for debugging, and sending variable info to board
+
+
+
+before starting session, must select from dropdown:
+->tools ->board -> arduino leonardo
+and
+->tools ->serial port -> <appropriate/ assigned serial port> (in this case COM3)
+
+
+------------------------------------------------------
+
+ESSENTIAL FUNCTIONS FOR CODE
+
+ void setup() {
+
+// turns serial communication on
+Serial.begin(9600); 
+}
+
+--> the Serial.begin() function sets up the serial communcation and starts it; The value in brackets = desired baud rate, and we can use between 300 & 115200. the ideal value will depend on the type of data being sent, and req'd speed.
+
+--------------
+
+ void loop() {
+
+ // writes "Hello, World" to the Serial port
+ Serial.println("Hello, World");
+ // small delay to give Arduino time to process
+ delay(100);
+
+} 
+
+--> straightforward enough, a simple loop that will automatically run/ loop infinitely.
+	
+------------------
+
+-------------------------------------------------------------
+TUT 2: HARD WIRING & ASSIGNING PINS/ VARIABLES TO CODE
+
+assign a variable to link to a pin:   int myLEDpin= 13    (for pin #13)
+
+setup and IF statement for if a high V signal is detected, i.e. digital ON:
+   if(ButtonPin=="HIGH") {digitalWrite(myLEDPin,HIGH);} else {digitalWrite(myLEDPIN,LOW);}
+	--> this will behave as a regular wire switch, e.g. touching 2 wires
+
+------------------
+in more detail:
+(assuming were using pin 3= i/p, pin 13 = o/p)
+** also NB apparently we MUST make sure to initialise internal pull-up resistor,
+using line      digitalWrite(buttonPin, HIGH);
+
+some confusion regarding pull-up R above, and why LOW signal is sent to LED when HIGH signal inputted and vice versa....
+-> I imagine the high i/p rep's an open switch, & low rep's a Short cct.
+
+
+
+
+
+-------------------------------------------------------------------
+
+once done writing, be sure to verify code, then UPLOAD, and use serial monitor if debugging is required.
+
+
+
+
+
+
+
+
+
