@@ -1,0 +1,9 @@
+apparently the workspace folder contains a bunch of metadata stuff.
+NEVER copy it over into other settings!
+Also, if you wanna share projects, advice is to store it outside workspace folder!
+can link to eclipse, using: file->import->general->existing projects into workspace
+OR just by dragging and dropping too.
+
+see website below:
+
+http://eclipse.dzone.com/articles/eclipse-workspace-tips
