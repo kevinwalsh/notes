@@ -16,6 +16,8 @@ and
 
 
 HWHackathon : note, can prob access board via putty by clicking SERIAL radio button and using above com port
+	However, pay attention to baud rate! (data transfer rate). typically 9600 i think,
+	BUT intel galileo board uses higher baud! 115200 apparently!!! (also recall, version 2 board requires 12v DC power!)
 
 ------------------------------------------------------
 

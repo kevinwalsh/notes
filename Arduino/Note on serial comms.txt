@@ -1,0 +1,47 @@
+
+very brief, abstract, 18-9-14:
+
+browsing wikis, etc
+-(namely http://www.societyofrobots.com/microcontroller_uart.shtml)
+
+-many diff types of serial comms, e.g. usb, rs232, ttl
+	-> think TTL is just Transistor-Transistor Logic
+
+-UART is an important acronym (came up alot at hackathon). basically just a general term for serial connection device
+-UART = Universal Asynchronous Receiver/ Transmitter
+
+
+-**N.B. rs232 != usb, 	(i.e. theyre DIFFERENT!) i think its just 12v vcc vs 5v, as attenuation was more of prob back before usb.
+-**N.B. sounds like TTL is prob what most microcontrollers will use. technically not same as usb (but close?)
+
+-however once we know what we wanna convert from and to, its a pretty simple process (relatively).
+
+-**N.B. suggested converter/adapter IC's: 
+	can make my own [TTL->USB?] using a FT232RL or CP2102
+
+
+also suggests TTL-bluetooth wireless adaptor, but doesnt give IC suggestions.
+
+
+-**N.B. Tx and Rx pins:		Tx on host goes to Rx on slave, etc! (we dont connect like to like).
+		and obv ground is common.
+		also says that connecting wrong will fry device, and if were worried it suggests adding a 2kOhm resistor on line.
+
+
+
+-synchronous Data Transmission: clock timing very important! if clocks out of sync then datastream may corrupt!
+	fine if clocks well sync'd. 
+	and if not, can run both devices off a single clock source, i.e. via a separate CLK signal wire.
+
+-ASYNCHRONOUS data transmission also avoids sync problem (send data whenever!) but must agree certain protocols in advance,
+	e.g. start & stop bits, packet size/length, check bits. also clocks (and/or? baud rate) must relatively agree, around 10%
+
+
+-**N.B. very handy "loop-back test"! for troubleshooting comms probs between hardware & software.
+	connect (i assume short?) the Tx & Rx pins on one device, then run code, e.g. send message "ABC",
+	and have code await a returning "ABC" message, and turn on an led or something when received.
+	do again on the PC side at the USB port. it also suggests/ mentions using HyperTerminal for this.
+	and lastly do it again on the TTL to USB adapters
+
+
+------------------------------------

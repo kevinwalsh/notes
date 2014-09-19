@@ -1,2 +1,4 @@
 more or less, only notes being backed up. no need to backup projects just yet hopefully.
 
+
+however svn keeps complaining about invalid PROPPATCH entry when i try to commit from base directory. may have to just update folder by folder!
