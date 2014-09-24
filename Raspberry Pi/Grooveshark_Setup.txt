@@ -3,7 +3,20 @@ SETTING UP GROOVESHARK / PLUGINS:
 
 cant remember if html5 grooveshark normally worked straight away or not, but sure as hell didnt during fresh install 18-9-14...
 
+-------------------
 
+***SUMMARY: apparently all i needed for the grooveshark plugin was gstreamer1.0-tools!
+(abit slow, but it works is the main thing)
+(also have not tested raw mp3 files, or even videos yet)
+---------------------
+
+
+
+
+
+
+
+-------------------
 -Finally started working after sudo apt-getting gstreamer1.0-tools
 		(or possibly gstreamer1.0-pulseaudio)?? dont think i installed this tho.
 
@@ -16,3 +29,9 @@ cant remember if html5 grooveshark normally worked straight away or not, but sur
 
 -couldve been a bunch of stuff i needed.... some other stuff i installed during troubleshooting included:
 		- omxplayer, vlc, xix (not via terminal), mpg321, alsa, midori, mplayer, amixer
+
+
+------------------------------------
+STARTOFF: 
+dont forget to output audio through the headphone jack (if applicable)
+

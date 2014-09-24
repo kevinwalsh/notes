@@ -1,0 +1,104 @@
+
+
+------------------------------------
+
+*****SUMMARY, TO SET UP X11VNC AUTOSTART
+----------------------------------
+(summary of last entry, confirmed)
+
+install x11vnc
+go to /home/pi/.config
+create "autostart" folder
+create file called "x11vnc.desktop"
+run command "chown -R pi /home/pi/.config/autostart"		where pi is the user in question
+then in x11vnc.desktop, add the following:
+	[Desktop Entry]
+	Encoding=UTF-8
+	Type=Application
+	Name=X11VNC
+	Comment=
+	Exec=x11vnc -forever -usepw -display :0
+	StartupNotify=false
+	Terminal=false
+	Hidden=false
+
+
+------------------------
+
+Can run bash commands by putting them in an .sh file, and then in terminal window, inputting "./myfile.sh"
+
+
+
+BUT to make them run automatically on startup, the [file location] CORRECTION file itself needs to be added to /etc/init.d script! (i think)
+
+
+
+-Think we also have to enable some checkbit thing in some file too..... 
+		--->edit: did not need!
+
+-** AND N.B. make sure .sh file is EXECUTABLE!!!! easiest is to do "chmod 777 /path/to/myfile.sh"
+
+
+
+
+
+
+
+
+---------------------------------
+SUMMARY according to http://askubuntu.com/questions/334040/script-at-etc-init-d-does-not-run-at-start-up
+1 - make file
+2 - move it to /etc/init.d folder
+3 - make it executable (chmod)
+4 - add it to the update scripts list using "sudo update-rc.d myfile.sh defaults"
+
+
+and from site http://stackoverflow.com/questions/12973777/how-to-run-a-shell-script-at-startup    its implied:
+that we may also have to create a link to rc.d using "ln -s /etc/init.d/myfile.sh /etc/rc.d"
+-and that we need to add "#!/bin/sh" to the start of [that] file
+
+
+**N.B. to get rid of "missing LSB tags" warning when adding to rc.d, basically include a header as follows:
+### BEGIN INIT INFO
+# Provides:          scriptname
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start daemon at boot time
+# Description:       Enable service provided by daemon.
+### END INIT INFO
+
+(may also need the #!/bin/sh     bit at the start). most above stuff "CAN" be blank, but best to leave default, i.e. numbers alone
+
+--------------------
+
+(QUICK TESTS, DEBUG, SETUP, ETC)
+
+got it working fine for stuff like DATE or ECHo, to a file. (even in same file).
+-but x11vnc simply wont run, ive tried a bunch of variations, leaving out &, sudo, >>logfile.log, etc.... nothing has worked
+
+
+
+--------------------------
+**IGNORE ABOVE - got auto start working, using the following:
+- instructions taken from http://cymplecy.wordpress.com/2014/02/09/auto-install-x11vnc/		and the accompanying link
+
+-(double check, but prob only need to do the following)
+go to /home/pi/.config
+create "autostart" folder
+create file called "x11vnc.desktop"
+run command "chown -R pi /home/pi/.config/autostart"		where pi is the user in question
+then in x11vnc.desktop, add the following:
+	[Desktop Entry]
+	Encoding=UTF-8
+	Type=Application
+	Name=X11VNC
+	Comment=
+	Exec=x11vnc -forever -usepw -display :0
+	StartupNotify=false
+	Terminal=false
+	Hidden=false
+
+
+

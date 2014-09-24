@@ -1,0 +1,33 @@
+
+
+X11VNC is the handiest remote desktop viewer ive used.
+
+- it actually mirrors the pi, i.e. it lets you take over the current session, 
+	(as opposed to programs like [xxxx] which open up a new "desktop", like accessing as a diff user or something)
+
+-couple other advantages, cant recall right now
+
+
+
+-----
+to install, "sudo apt-get install x11vnc"
+
+
+-to run once, putty in and type "x11vnc"
+	but this will terminate once we login once and exit, or if we close the putty window
+**N.B. when logging in, may need to specify port number when entering IP address!!
+		---> (it seems if we add sudo prefix, then we dont have to specify port number as mentioned above!)
+
+
+- to be able to log in and back out infinitely* (i.e. while putty is left open), can use "x11vnc -forever"
+	
+
+- to run permanently until the machine is restarted, include **SUDO** (apparently needed) and an ampersand (to run in background).
+		 i.e. " sudo x11vnc -forever &"
+
+
+-----------------------------------------
+
+AUTO SCRIPTS:
+
+
