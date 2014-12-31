@@ -1,0 +1,8 @@
+
+currently have tried once and failed to set this up. did steps but must have messed up a step
+
+
+http://www.raspberrypi.org/media-streaming-without-air-play/
+http://blog.scphillips.com/2013/01/using-a-raspberry-pi-with-android-phones-for-media-streaming/
+http://blog.scphillips.com/2013/07/playing-music-on-a-raspberry-pi-using-upnp-and-dlna-revisited/
+discussion on above instructions http://www.raspberrypi.org/forums/viewtopic.php?f=38&t=29663
