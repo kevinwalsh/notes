@@ -22,6 +22,8 @@ then in x11vnc.desktop, add the following:
 	Terminal=false
 	Hidden=false
 
+to store/ set password, type "x11vnc -storepasswd"   and then enter desired password
+
 
 ------------------------
 
